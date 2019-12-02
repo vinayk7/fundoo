@@ -1,0 +1,889 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Indus News</title>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <meta content="gzip" http-equiv="content-encoding">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,700' rel='stylesheet' type='text/css'>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- <script src="functions.js"></script> -->
+
+    <!-- Global Site Tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-47795566-10"></script>
+    <script>
+
+
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date(); a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-47795566-10', 'auto');
+        ga('send', 'pageview');
+
+    </script>
+
+</head>
+<body>
+<!--  Search Bar  -->
+    <div class="container-fluid">
+        <div class="row row_search top-buffer">
+            <div class="search-bar">
+                <div id="search" class="input-group">
+                    <input class="form-control" name="q" type="text" id="search_in_page" placeholder="Search" required style="font-size: 20px; min-height:42px;"/>
+                    <div class="input-group-btn" id="search_button">
+                        <button class="btn btn-default" id="button-icon" >
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="site_suggest_box">
+                <ul class=" site_suggest_ads list-unstyled result-bucket"></ul>
+            </div>
+        </div>
+<!--  Site Suggest  -->
+
+<!--  Recommended Apps  -->
+        <div class="row vertical-center-row top-buffer recommended_app_wrap">
+            <div id="recommended_app_section">
+            </div>
+        </div>
+
+<script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+   <script>
+   var googletag = googletag || {};
+   googletag.cmd = googletag.cmd || [];
+   </script>
+<div class="row vertical-center-row top-buffer">
+      <div id="div-gpt-ad-1551357349271-9">
+        <script type="text/javascript">
+           googletag.cmd.push(function() {
+           googletag.pubads().display("/42115163/IP_start.indusos.com_320X100_Mobile", [320,100],"div-gpt-ad-1551357349271-9");
+         });
+      </script>
+      </div>
+      <script type="text/javascript">
+(function(){function LS(){var o='script',s=top.document,a=s.createElement(o),m=s.getElementsByTagName(o)[0],p=location.protocol,t="https:"==p?"s":"",d=new Date(),u=p+'//hb'+t+'.ph.affinity.com/v5/indusos.com/inpara.php?t='+d.getDate()+d.getMonth()+d.getHours();a.async=1;a.src=u;m.parentNode.insertBefore(a,m)}
+try{window.__IBC___WRAPPER__=document.getElementById('div-gpt-ad-1551357349271-9')
+LS()}catch(e){}})()
+</script>
+</div>
+
+<!--  TopNews Title  -->
+        <div class="row">
+            <div class="section_heading topnew top-buffer tab-wrap">
+                <span>TOP NEWS</span>
+            </div>
+        </div>
+<!--  TopNews Section  -->
+        <div class="row">
+            <ul class="top_news_section top-buffer"></ul>
+        </div>
+<!--  ReadMore Button  -->
+        <div class="row">
+            <div class="readmore-button bottom-buffer tab-wrap">
+              <button type="button" class="btn btn-block ReadMore">View More</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/crypto-js.min.js" defer="defer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/hmac-sha1.min.js" defer="defer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/enc-base64.min.js" defer="defer"></script>
+    <script src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+
+<script>
+
+$(function () {
+    var flag_var = 0;
+    var getUrlParameter = function getUrlParameter(uri) {
+        var sPageURL = decodeURIComponent(uri),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
+        var param_dict = {};
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+            param_dict[sParameterName[0]] = sParameterName[1];
+        }
+        return param_dict;
+    };
+
+//---  Recommended Apps Div  ---//
+var recommended_app_section = document.getElementById("recommended_app_section");
+var current_parameter = getUrlParameter(window.location.search.substring(1))["IMEI"];
+$.ajax({
+    url: 'https://kme46.siteplug.com/qlapi?o=kme46&s=88107&u=[domain]&f=json&n=8&i=1&is=48x48&di=' + current_parameter,
+    type: 'GET',
+    dataType: 'jsonp',
+    error: function (err) {
+    },
+    success: function (res) {
+        var data_from_site_plug = res['data'].slice(0, 8);
+        for (var app = 0; app < data_from_site_plug.length; app++) {
+            var fig_div = document.createElement("div");
+            fig_div.classList.add("col-xs-3");
+            fig_div.classList.add("panel");
+            var panel_body = document.createElement("div");
+            panel_body.className = "panel-body";
+            var adiv = document.createElement("a");
+            var target_link = data_from_site_plug[app]['rurl'];
+
+            adiv.href = target_link;
+            panel_body.appendChild(adiv);
+            fig_div.appendChild(panel_body);
+
+            var app_btn_div = document.createElement("input");
+            app_btn_div.type = "image";
+            app_btn_div.classList.add("img-responsive");
+            app_btn_div.classList.add("img-thumbnail");
+            app_btn_div.classList.add("center-block");
+            app_btn_div.classList.add("recommended_apps");
+
+            var app_img_source = data_from_site_plug[app]['iurl'];
+            app_btn_div.src = app_img_source;
+            app_btn_div.title = data_from_site_plug[app]['brand'];
+            var fig_caption = document.createElement("div");
+            fig_caption.className = "panel-heading word-wrap";
+            fig_caption.id = "recommended_apps_name";
+            fig_caption.innerText = data_from_site_plug[app]['brand'];
+            panel_body.appendChild(app_btn_div);
+            panel_body.appendChild(fig_caption);
+            recommended_app_section.appendChild(fig_div);
+
+            if ($("#recommended_app_section").find(".panel")) {
+                flag_var = 1;
+            }
+        }
+    }
+});
+
+
+function siteSuggest(ss_keyword) {
+  var site_suggest_ads = document.getElementsByClassName("site_suggest_ads");
+        $.ajax({
+          url: 'https://cwc89.siteplug.com/sssapi?o=cwc89&s=61071&kw='+ ss_keyword + '&itype=cs&f=json&i=1&it=1&is=36x36&n=5&af=1&di=' + current_parameter,
+          type: 'GET',
+          cache: 'false',
+          dataType: 'jsonp',
+          error: function (err) {
+          },
+          success: function (response) {
+            var data_from_site_suggest = response['ads'];
+              if (Array.isArray(response['ads']['ad'])) {
+                $('.site_suggest_ads').html("");
+
+              var data_from_site_suggest = response['ads']['ad'].slice(0, 3);
+                for (var ad = 0; ad < data_from_site_suggest.length; ad++) {
+
+                  var ad_row_div = document.createElement("li");
+                  ad_row_div.className = "li_row";
+
+                  var a_div = document.createElement("a");
+                  a_div.href = data_from_site_suggest[ad]['rurl'];
+
+                  var ad_list_div = document.createElement("div");
+                  ad_list_div.className = "ad_list";
+
+                  var pic_div = document.createElement("div");
+                  pic_div.id = "icon";
+
+                  var img_div = document.createElement("img");
+                  img_div.id = "brand_image";
+                  img_div.className = "img-responsive ads-img img-auto";
+                  var img_source = data_from_site_suggest[ad]['iurl'];
+                  img_div.src = img_source;
+
+                  pic_div.appendChild(img_div);
+
+                  var ad_title = document.createElement("div");
+                  ad_title.className = "site_ad_title";
+                  var h3_div = document.createElement("h3");
+                  h3_div.id = "brand_title";
+                  h3_div.className = "word-wrap"
+
+                  h3_div.innerText = data_from_site_suggest[ad]['brand'];
+                  ad_title.appendChild(h3_div);
+
+
+                  var p_div = document.createElement("p");
+                  p_div.id = "ad_domain";
+                  p_div.className = "domain_url";
+                  p_div.innerText = data_from_site_suggest[ad]['durl'];
+
+                  ad_title.appendChild(p_div);
+
+
+                  a_div.appendChild(pic_div);
+                  a_div.appendChild(ad_title)
+                  ad_list_div.appendChild(a_div)
+
+                  ad_row_div.appendChild(ad_list_div);
+
+                  site_suggest_ads[0].appendChild(ad_row_div);
+                 }
+         }
+            else {
+
+
+           var data_from_site_suggest = response['ads'];
+
+           var ad_row_div = document.createElement("li");
+           ad_row_div.className = "li_row";
+
+           var a_div = document.createElement("a");
+           a_div.href = response['ads']['ad']['rurl'];
+
+           var ad_list_div = document.createElement("div");
+           ad_list_div.className = "ad_list";
+
+           var pic_div = document.createElement("div");
+           pic_div.id = "icon";
+
+           var img_div = document.createElement("img");
+           img_div.id = "brand_image";
+           img_div.className = "img-responsive ads-img img-auto";
+           var img_source = response['ads']['ad']['iurl'];
+           img_div.src = img_source;
+
+           pic_div.appendChild(img_div);
+
+           var ad_title = document.createElement("div");
+           ad_title.className = "site_ad_title word-wrap";
+           var h3_div = document.createElement("h3");
+           h3_div.id = "brand_title";
+           h3_div.className = "word-wrap";
+
+           h3_div.innerText = response['ads']['ad']['brand'];
+           ad_title.appendChild(h3_div);
+
+
+           var p_div = document.createElement("p");
+           p_div.id = "ad_domain";
+           p_div.className = "domain_url";
+           p_div.innerText = response['ads']['ad']['durl'];
+
+           ad_title.appendChild(p_div);
+
+
+           a_div.appendChild(pic_div);
+           a_div.appendChild(ad_title)
+           ad_list_div.appendChild(a_div)
+
+           ad_row_div.appendChild(ad_list_div);
+
+           site_suggest_ads[0].appendChild(ad_row_div);
+          }
+        }
+
+      });
+
+
+}
+
+//---  Top News Div  ---//
+
+var top_news_section = document.getElementsByClassName("top_news_section");
+var timestamp = new Date().getTime();
+var message_get = "cid=1&fields=data.rows.id%2Cdata.rows.title%2Cdata.rows.deepLinkUrl%2Cdata.rows.publishTime%2Cdata.rows.images%2Cdata.rows.source&langCode=hi&pageSize=40&partner=indus&puid=" + current_parameter + "&ts=" + timestamp + "GET"
+
+var hash_get = CryptoJS.HmacSHA1(message_get, "4IGAIGGb8z1nOGzpBiSeQA==");
+var hashInBase64_get = CryptoJS.enc.Base64.stringify(hash_get);
+var message_post = "partner=indus&puid=" + current_parameter + "&ts=" + timestamp + "POST"
+
+var hash_post = CryptoJS.HmacSHA1(message_post, "4IGAIGGb8z1nOGzpBiSeQA==");
+var hashInBase64_post = CryptoJS.enc.Base64.stringify(hash_post);
+var track_data = {
+    "viewedDate": timestamp,
+    "stories": []
+};
+var settings_get = {
+    "async": true,
+    "crossDomain": true,
+    "withCredentials": true,
+    "url": "https://feed.dailyhunt.in/api/v2/syndication/items?pageSize=40&fields=data.rows.id,data.rows.title,data.rows.deepLinkUrl,data.rows.publishTime,data.rows.images,data.rows.source&cid=1&langCode=hi&partner=indus&ts=" + timestamp + "&puid=" + current_parameter,
+"xhrFields": {
+  "withCredentials" : true
+},
+    "method": "GET",
+    "headers": {
+        "Authorization": "key=DVj2UsFaFnN+3kn4VHWPS9hUiLCz4eOtblRfAUrDC50=",
+        "Signature": hashInBase64_get,
+    }
+}
+      $.ajax(settings_get).done(function (data) {
+          var data_from_wow = data['data']['rows'].slice(0, 30);
+          for (var i = 0; i < data_from_wow.length; i++) {
+              var row_div = document.createElement("li");
+              row_div.className = "row";
+              row_div.id = "top_news_x";
+              var pic_div = document.createElement("div");
+              pic_div.className = "col-xs-3";
+              pic_div.id = "pic";
+              var img_div = document.createElement("img");
+              img_div.id = "news_image";
+              img_div.className = "img-responsive img-rounded img-auto";
+              var image_array = data_from_wow[i]['images'][0];
+              image_array = image_array.replace(/{CMD}/g, "crop").replace(/{W}x{H}_{Q}/g, "60x60_100").replace(/{EXT}/g, "webp");
+              img_div.src = image_array;
+              pic_div.appendChild(img_div);
+              row_div.appendChild(pic_div);
+              var news_head_div = document.createElement("div");
+              news_head_div.className = "col-xs-9";
+              var a_div = document.createElement("a");
+              a_div.id = "news_heading";
+              a_div.innerText = data_from_wow[i]['title'];
+              a_div.href = data_from_wow[i]['deepLinkUrl'];
+              news_head_div.appendChild(a_div);
+
+                  // Add source Start
+
+                  var h6_div = document.createElement("h6");
+                  h6_div.id = "news_source";
+                  h6_div.className = "source";
+                  h6_div.innerText = data_from_wow[i]['source'];
+                  news_head_div.appendChild(h6_div);
+
+                  // Add source End
+
+              var br_tag = document.createElement("br");
+              news_head_div.appendChild(br_tag);
+
+              row_div.appendChild(news_head_div);
+              top_news_section[0].appendChild(row_div);
+              track_data.stories.push({
+                  "id": data_from_wow[i]['id'],
+                  "trackData": data_from_wow[i]['trackData']
+              });
+
+          }
+          post_Tracking_Data(JSON.stringify(track_data));
+      });
+
+      function post_Tracking_Data(t_data) {
+          var settings_post = {
+              "async": true,
+              "crossDomain": true,
+      "withCredentials": true,
+              "url": "https://track.dailyhunt.in/api/v2/syndication/tracking?partner=indus&ts=" + timestamp + "&puid=" + current_parameter,
+      "xhrFields": {
+          "withCredentials" : true
+        },
+              "method": "POST",
+              "headers": {
+                  "Authorization": "key=DVj2UsFaFnN+3kn4VHWPS9hUiLCz4eOtblRfAUrDC50=",
+                  "Signature": hashInBase64_post,
+                  "Content-Type": "application/json",
+              },
+              "processData": false,
+              "data": t_data
+          }
+
+          $.ajax(settings_post).done(function (data) {
+              //   console.log("posted successfully");
+          });
+      }
+
+      function direct_to_search_link() {
+          var redirectlink;
+          var search_query = document.getElementById('search_in_page').value;
+          if (search_query != '') {
+              $.ajax({
+                  url: 'https://edd31.siteplug.com/sssapi?o=edd31&s=77160&kw=' + search_query + '&itype=cs&f=json&af=0&di=' + current_parameter,
+                  dataType: 'jsonp',
+                  type: 'GET',
+                  success: function (data) {
+                      var ads = data['ads'];
+                      //  console.log(ads);
+                      if (ads != "No Ads for given Keyword.") {
+                          redirectlink = data['ads']['ad']['rurl'];
+                          //       console.log(redirectlink);
+                          window.open(redirectlink, "_self");
+                      } else {
+                          // window.open("https://www.bing.com/search?mkt=en-in&pc=INDC&q=" + search_query, "_self");
+                          window.open("//b.scandid.in/api/searchv3?category=product&type=json&subid=INDA&key=tqw5643rasf3gbag&pid=ind&product_key=" + search_query, "_self");
+
+                      }
+                  },
+                  error: function (err) {
+                      //   console.log(err);
+                  },
+              });
+          }
+      }
+
+      $('.input-group-btn').on('click', function () {
+          direct_to_search_link();
+      });
+
+function deleteInput (){
+      var input = document.getElementById('search_in_page');
+          input.onkeydown = function() {
+          var key = event.keyCode || event.charCode;
+          if( key == 8 || key == 46 )
+          $('.site_suggest_ads').html("");
+              return false;
+      }
+}
+
+      $('#search_in_page').keyup(function (e) {
+        var ss_keyword = document.getElementById('search_in_page').value;
+        $('.site_suggest_ads').html("");
+           if ( ss_keyword.length > 2 ) {
+             $('.site_suggest_box').show();
+             siteSuggest(ss_keyword);
+           }
+      });
+
+      $('#search_in_page').keydown(function (e) {
+          if (e.keyCode === 13) {
+              direct_to_search_link();
+          }
+      });
+
+      $("#search").submit(function () {
+          var label = $('#search_in_page').val();
+          ga('send', 'event', 'ClickEvent', 'SearchClicked', label);
+      });
+      $('.site_suggest_ads').on('click', '.li_row', function (event) {
+          var label = $(this).find("a").text();
+          ga('send', 'event', 'ClickEvent', 'siteAdClicked', label);
+          window.location = $(this).find("a").attr("href");
+         // console.log("siteAdClicked")
+      });
+
+      $('.top_news_section').on('click', '#top_news_x', function (event) {
+          var label = $(this).find("a").text();
+          ga('send', 'event', 'ClickEvent', 'topNewsClicked', label);
+          window.location = $(this).find("a").attr("href");
+      });
+
+      $('#recommended_app_section').on('click', '.panel-body', function (event) {
+          var label = $(this).find(".panel-heading").text();
+          ga('send', 'event', 'ClickEvent', 'RecommendedClicked', label);
+          window.location = $(this).find("a").attr("href");
+
+      });
+        //AmazonAd_Click
+      $('.amazon_ad').click(function () {
+          ga('send', 'event', 'ClickEvent', 'AmazonAdClicked');
+         console.log("AmazonClicked")
+      });
+
+      //WorldCup AdClicked
+    $('.world-cup-ad').click(function () {
+        ga('send', 'event', 'ClickEvent', 'WorldCupAdClicked');
+       console.log("WorldCupAdClicked")
+    });
+
+
+      $('.ReadMore').click(function () {
+          ga('send', 'event', 'ClickEvent', 'readMoreClicked', 'readmore');
+          $('.top_news_section li:hidden').slice(0, 6).show();
+          if ($('.top_news_section li').length == $('.top_news_section li:visible').length) {
+              $('.ReadMore').hide();
+          }
+      });
+      $('#recommended_app_section').ready(function () {
+          setTimeout(function () {
+              if (flag_var == 1) {
+                  $('.reco').css("display", "block");
+              }
+          }, 500);
+      });
+      $('.top_news_section').ready(function () {
+          setTimeout(function () {
+              $('.topnew').css("display", "block");
+          }, 500);
+      });
+      $('.topnew').ready(function () {
+          setTimeout(function () {
+              $('.ReadMore').css("display", "block");
+          }, 500);
+      });
+
+  });
+
+</script>
+
+<!-- Google  Ad  300x250-->
+
+<script async="async" src="https://www.googletagservices.com/tag/js/gpt.js"></script>
+<script>
+var googletag = googletag || {};
+googletag.cmd = googletag.cmd || [];
+</script>
+
+<div class="row vertical-center ">
+<div id="div-gpt-ad-1565767605361-0">
+<script type="text/javascript">
+googletag.cmd.push(function() {
+googletag.pubads().display("/42115163/IP_start.indusos.com_300X250_Mobile", [300,250],"div-gpt-ad-1565767605361-0");
+});
+</script>
+</div>
+</div>
+
+
+</body>
+
+<style type="text/css" media="handheld">
+/* rules for mobile devices that don't support media queries */
+body {
+    font-size: 80%;
+
+}
+
+</style>
+
+
+
+<style>
+    html {
+        height: 100%;
+    }
+
+    body {
+        font-family: Lato;
+        font-size: 140%;
+        font-weight: bold;
+        background-color: #fafafa;
+        padding: 0;
+    }
+
+/*@ Jalinder*/
+
+
+#div-gpt-ad-1565767605361-0 {
+
+  height:100%;
+  width:100%;
+
+  text-align: center;
+  font: 0/0;
+}
+
+
+#div-gpt-ad-1551357349271-9 {
+
+  height:100%;
+  width:100%;
+
+  text-align: center;
+  font: 0/0;
+}
+
+
+.site_suggest_box {
+width: 88%;
+background: #fff;
+color: gray;
+border: 1px solid rgba(0, 0, 0, .15);
+border-radius: 4px;
+-webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, .175);
+box-shadow: 0 2px 4px rgba(0, 0, 0, .175);
+display: inline-block;
+position: absolute;
+z-index: 9;
+
+}
+
+
+.site_suggest_box li a {
+    display: block;
+    text-overflow: ellipsis;
+
+}
+
+
+.li_row {
+  padding: 5px 15px;
+
+}
+.site_ad_title{
+  width: 160px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+
+
+}
+.site_suggest_box h3 {
+font-size: 20px;
+margin-top: 1px;
+margin-bottom: 1px;
+}
+
+.site_suggest_box p {
+font-size: 12px;
+color: #999;
+margin-top: 1px;
+margin-bottom: 1px;
+}
+
+.site_suggest_box ul {
+margin-bottom: 0px;
+}
+
+#icon {
+  width:36px;
+  display:inline-block;
+  margin:3px;
+  border: 1px solid #c1c1c1;
+  border-radius: 3px;
+
+}
+
+.site_ad_title {
+  display: inline-block;
+  margin-left: 20px;
+  font-size: 20px;
+
+
+
+}
+
+
+
+.ads_img {
+    width: 24px;
+    border: 1px solid #c1c1c1;
+    border-radius: 3px;
+}
+
+.word-wrap{word-wrap: break-word;}
+
+
+#news_source {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color:#999;
+}
+
+.recommended_apps_img {
+    padding-left: 5px !important;
+    padding-right: 5px !important;
+}
+
+.top-buffer { margin-top:20px; }
+.bottom-buffer { margin-bottom:20px; }
+
+
+
+    .container-fluid {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 5%;
+        padding-left: 5%;
+        padding-right:5%;
+    }
+
+    .row {
+        padding-bottom: 1.5%;
+        padding-top: 1.5%;
+    }
+
+    .container-fluid>.row_search {
+        padding-bottom: 3%;
+        padding-top: 0 !important;
+    }
+
+    #icon_image {
+        position: relative;
+        width: 15%;
+        height: 15%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+
+    .city {
+        display: block;
+        color: #999;
+        font-size: 80%;
+        margin-bottom: 5%;
+    }
+
+    .section_heading {
+        display: block;
+        text-align: left;
+        overflow: hidden;
+        white-space: nowrap;
+
+    }
+
+    .reco {
+        display: none;
+    }
+
+    .topnew {
+        display: none;
+    }
+
+    .recommended_apps {
+        background-size: cover;
+        /*float: left; @jali */
+        position: relative;
+        margin-bottom: 10%;
+        text-align: center;
+        text-overflow: ellipsis;
+        font-weight: normal;
+        border-radius: 10%;
+        text-decoration: none;
+    }
+
+    #news_heading {
+        color: #555;
+        line-height: 1;
+
+    }
+
+    #news_sub_heading {
+        color: #999;
+        padding-top: 2%;
+        font-size: 90%;
+    }
+
+    #news_image {
+        width: 60px;
+        height: 60px;
+        background-size: cover;
+
+    }
+
+    #pic {
+        padding-right: 3% !important;
+    }
+
+    .panel-heading {
+        text-align: center;
+        font-size: 75%;
+        color: #999;
+    }
+
+    #recommended_apps_name {
+      padding: 0;
+        display: block;
+        display: -webkit-box;
+        max-width: 100%;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        /* overflow: hidden; */
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .panel {
+        background-color: #fafafa;
+        margin-bottom: 0;
+        width: 25%;
+        padding-left: 5px;
+        padding-right: 5px;
+        margin-bottom: 5%;
+    }
+
+    ul {
+        padding: 0;
+        list-style-type: none;
+    }
+
+    li {
+        list-style-type: none;
+        /* border-bottom: 1px solid #ccc; */
+    }
+
+    ul li:nth-child(n+6) {
+        display: none;
+    }
+
+    .ReadMore {
+        display: none;
+        cursor: pointer;
+        color: #9a9a9a;
+    }
+
+    .panel,
+    .route-blurb-container {
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .panel-body {
+        padding: 0;
+    }
+
+    #search_in_page::-webkit-input-placeholder {
+        font-weight: normal;
+        color: #999;
+
+    }
+
+    #search_in_page {
+      font-size: 18px;
+      height: 42px;
+    }
+#button-icon {
+  font-size: 20px;
+  color: #777777;
+
+}
+
+    .search_icon {
+        color: #999;
+    }
+
+    #recommended_app_section>.col-sm {
+        padding-right: 3% !important;
+        padding-left: 3% !important;
+    }
+
+    .col-xs-9 {
+        padding-left: 0 !important;
+    }
+
+    .input-group-btn>.btn {
+        padding: 6px 10px;
+    }
+
+    .search_unicode {
+        -moz-transform: rotate(270deg);
+        -webkit-transform: rotate(270deg);
+        -o-transform: rotate(270deg);
+        -ms-transform: rotate(270deg);
+        display: inline-block;
+        text-align: center;
+    }
+
+    .search-bar {
+          /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+        border-radius: 10% !important;
+        /*    border: 3px solid #aaa !important; */
+    }
+
+
+    div.aw-widget-36hour-inner div.aw-widget-content div.aw-header a.aw-get-this-widget,
+    div.aw-widget-36hour-inner div.aw-widget-content div.aw-header a.aw-logo {
+        display: none !important;
+    }
+
+    div.aw-widget-36hour-inner div.aw-widget-content div.aw-header div.aw-search {
+        border: none !important;
+    }
+
+    .lt-480 div.aw-widget-36hour-inner div.aw-widget-content a.aw-current-weather {
+        padding-top: 15% !important;
+    }
+
+    .lt-480 div.aw-widget-36hour-inner div.aw-top-content div.aw-emergency-header {
+        display: none !important;
+    }
+</style>
+
+
+</html>
